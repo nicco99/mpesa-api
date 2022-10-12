@@ -9,7 +9,6 @@ function Mpesa() {
   return (
     <mpesaContext.Provider value={{ amount: amount, setAmount: setAmount }}>
       <div className="grid sm:grid-cols-3 gap-y-1 w-full">
-        <h1 className="text-center text-lg">Mpesa App</h1>
         <Balance />
         <Deposit />
         <Withdrawal />
