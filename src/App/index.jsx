@@ -6,7 +6,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="" element={<Mpesa />} />
+          <Route path="api" element={<Mpesa />} />
         </Routes>
       </BrowserRouter>
     </>
