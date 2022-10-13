@@ -13,10 +13,9 @@ function MpesaApi() {
         });
     };
 
-    console.log(details.phone);
-    console.log(details.amount);
 
     const url = `https://cashwaytraders.com/x-mpesa-api.php?phone=${details.phone}&amount=${details.amount}`;
+    console.log(url)
     const fetchRequest = useCallback(() => {
         setLoading(true);
         fetch(url, {
