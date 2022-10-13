@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function loading_component() {
+function Loading_component() {
     return (
         <div>
             <div class="spinner-border text-success" role="status">
@@ -10,4 +10,4 @@ function loading_component() {
     )
 }
 
-export default loading_component
+export default Loading_component

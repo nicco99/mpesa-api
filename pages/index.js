@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import loading_component from './loading_component';
+import Loading_component from './loading_component';
 function MpesaApi() {
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(false)
@@ -8,18 +8,13 @@ function MpesaApi() {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setDetails((prev) => {
-            return { ...prev, [name]: value }
-        });
+        setDetails({ ...prev, [name]: value });
     };
-    window.alert(details.phone);
     const url = `https://cashwaytraders.com/x-mpesa-api.php?phone=${details.phone}&amount=${details.amount}`;
+  console.log(url)
     const fetchRequest = useCallback(() => {
         setLoading(true);
-        fetch(url, {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json', },
-        })
+        fetch(url)
             .then((res) => {
                 res.json().then((response) => {
                     console.log(response);
@@ -48,13 +43,13 @@ function MpesaApi() {
                 </div>
                 <div className="form-group mb-2">
                     <label htmlFor="exampleInputPassword1">Mobile Number</label>
-                    <input type="text" onChange={handleChange} name='phone' className="form-control" id="exampleInputPassword1" placeholder="Mobile No." />
+                    <input type="number" onChange={handleChange} name='phone' className="form-control" id="exampleInputPassword1" placeholder="Mobile No." />
                 </div>
                 <button type="button" onClick={fetchRequest} className="btn btn-primary">Submit</button>
 
                 {loading && (
                     <div className="flex flex-col h-full w-full justify-center items-center">
-                        <loading_component> </loading_component>
+                        <Loading_component/>
                         <p className="py-1 text-xs">Initiating transactions...</p>
                     </div>
                 )}
