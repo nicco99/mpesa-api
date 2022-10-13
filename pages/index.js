@@ -12,7 +12,10 @@ function MpesaApi() {
             return { ...prev, [name]: value }
         });
     };
-    window.alert(details.phone);
+
+    console.log(details.phone);
+    console.log(details.amount);
+
     const url = `https://cashwaytraders.com/x-mpesa-api.php?phone=${details.phone}&amount=${details.amount}`;
     const fetchRequest = useCallback(() => {
         setLoading(true);
