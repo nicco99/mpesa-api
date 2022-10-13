@@ -4,7 +4,7 @@ function Loading_component() {
     return (
         <div>
             <div className="spinner-border text-success" role="status">
-                <span className="sr-only">Loading...</span>
+                <span className="sr-only"></span>
             </div>
         </div>
     )
