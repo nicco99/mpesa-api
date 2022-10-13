@@ -19,6 +19,7 @@ function MpesaApi() {
       .then((res) => res.json())
       .then((response) => {
         setVideos((videos) => response);
+        console.log(response)
         setLoading(false);
       })
       .catch((err) => console.log(err));
