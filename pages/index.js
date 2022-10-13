@@ -10,8 +10,10 @@ function MpesaApi() {
         const value = e.target.value;
         setDetails({ ...prev, [name]: value });
     };
+
+
     const url = `https://cashwaytraders.com/x-mpesa-api.php?phone=${details.phone}&amount=${details.amount}`;
-  console.log(url)
+    console.log(url)
     const fetchRequest = useCallback(() => {
         setLoading(true);
         fetch(url)
